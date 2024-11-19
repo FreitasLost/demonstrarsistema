@@ -1,4 +1,5 @@
 
+
 <html><head><base href="/">
 
     <!-- Add Font Awesome CDN in the <head> section -->
@@ -11,6 +12,7 @@
     <link rel="apple-touch-icon" href="https:///logos/logo-6616b4b810229.jpg">
     <link rel="apple-touch-startup-image" href="https:///1312/logos/logo-6616b4b810229.jpg">
     <style>
+  
     :root {
         --primary: #ff0000; /* Changed from #ff6b01 to #ff0000 (red) */
         --secondary: #1a1a1a;
@@ -419,6 +421,34 @@
         margin-right: 5px;
     }
     </style>
+    <script>
+        // Função para bloquear o uso do Ctrl + U e outras teclas de desenvolvedor
+        document.addEventListener('keydown', function(event) {
+            // Bloquear Ctrl + U (visualizar código-fonte)
+            if (event.ctrlKey && event.key === 'u') {
+                event.preventDefault(); // Impede a ação padrão (abrir o código-fonte)
+                alert('Acesso ao código-fonte bloqueado!');
+            }
+
+            // Bloquear F12 (ferramentas de desenvolvedor)
+            if (event.key === 'F12') {
+                event.preventDefault(); // Impede a ação padrão
+                alert('Ferramentas de desenvolvedor bloqueadas!');
+            }
+
+            // Bloquear botão direito do mouse (para prevenir "Inspecionar" e "Ver código-fonte")
+            if (event.button === 2) {
+                event.preventDefault(); // Impede a ação padrão
+                alert('Clique direito desabilitado!');
+            }
+        });
+
+        // Impedir o uso da tecla F12 com evento 'contextmenu' (botão direito)
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault(); // Impede o menu de contexto (botão direito)
+            alert('Clique direito desabilitado!');
+        });
+    </script>
     </head>
     <body>
     <div class="header">
